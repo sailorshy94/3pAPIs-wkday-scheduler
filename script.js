@@ -7,9 +7,9 @@ $(function (){
   // useful when saving the description in local storage?
   
   $(".saveBtn").on("click", function(){
-    localStorage.setItem("", "");
+    var input = $(".description").val();
+    console.log(input);
   });
-
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
