@@ -1,6 +1,4 @@
 $(function () {
-//  How might the id be
-  // useful when saving the description in local storage?
   var timeBlockContainer = $(".container-lg");
 
   timeBlockContainer.on("click", ".saveBtn", function (event) {
@@ -13,19 +11,15 @@ $(function () {
 
     var timeId = clickTarget.parent().attr("id");
 
-    console.log(timeId);
+    console.log(timeId); //returns the string hour-#, how to use for local storage?
 
     var inputEl = clickTarget.prev();
 
     var userInput = inputEl.val();
 
-    // var userInputKey = 
+    console.log();
 
-    // console.log();
-
-    // for local storage, id name (hour-#) is the key, use .text?
-    // localStorage.setItem();
-
+    // for local storage, id name (hour-#) is the key, userinput = value for (key, val) pair
     // localStorage.setItem();
   })
 
@@ -40,6 +34,13 @@ $(function () {
   // .addClass("present");
   // .addClass("future"); 
 
+  // function compare time () {
+  // if (currentTime !== valueofcurrenttime) {
+//   ().addClass ("past");
+  // }
+// }
+// how to compare to current, past, future??
+
   var currentTime = dayjs().hour();
 
   console.log (currentTime);
@@ -48,11 +49,11 @@ $(function () {
   //   "hour-10",
   //   "hour-11",
   //   "hour-12",
-  //   "hour-1",
-  //   "hour-2",
-  //   "hour-3",
-  //   "hour-4",
-  //   "hour-5",
+  //   "hour-13",
+  //   "hour-14",
+  //   "hour-15",
+  //   "hour-16",
+  //   "hour-17",
   // ]
 
   // function timePast () {
