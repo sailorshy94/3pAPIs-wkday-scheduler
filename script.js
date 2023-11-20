@@ -11,13 +11,20 @@ $(function () {
 
     var timeBlockEl = clickTarget.parent();
 
+    var timeId = clickTarget.parent().attr("id");
+
+    console.log(timeId);
+
     var inputEl = clickTarget.prev();
 
     var userInput = inputEl.val();
 
-    console.log(userInput);
+    // var userInputKey = 
+
+    // console.log();
 
     // for local storage, id name (hour-#) is the key, use .text?
+    // localStorage.setItem();
 
     // localStorage.setItem();
   })
