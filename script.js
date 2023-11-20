@@ -17,10 +17,11 @@ $(function () {
 
     var userInput = inputEl.val();
 
-    console.log();
+    console.log(userInput);
 
     // for local storage, id name (hour-#) is the key, userinput = value for (key, val) pair
-    // localStorage.setItem();
+    localStorage.setItem(timeId, userInput);
+
   })
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -29,38 +30,40 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-// ????
+  // ????
   // .addClass("past");
   // .addClass("present");
   // .addClass("future"); 
 
   // function compare time () {
   // if (currentTime !== valueofcurrenttime) {
-//   ().addClass ("past");
+  //   ().addClass ("past");
   // }
-// }
-// how to compare to current, past, future??
+
+  // for loop
+
+  // 
+
+  // how to compare to current, past, future??
 
   var currentTime = dayjs().hour();
 
-  console.log (currentTime);
-  // var times = [
-  //   "hour-9",
-  //   "hour-10",
-  //   "hour-11",
-  //   "hour-12",
-  //   "hour-13",
-  //   "hour-14",
-  //   "hour-15",
-  //   "hour-16",
-  //   "hour-17",
-  // ]
+  console.log(currentTime);
 
-  // function timePast () {
-  // var i = 0;
-  // for (i = 0; i < times.length; i++) {
-
-  // }    
+  for (i = 9; i <= 17; i++) {
+    var timeBlockEl = $("#hour" + i);
+    if (i > currentTime) {
+      timeBlockEl.addClass("past");
+    } else {
+      if (i < currentTime) {
+        timeBlockEl.addClass("future");
+      } else {
+        if (i === currentTime) {
+          timeBlockEl.addClass("present");
+        }
+      }
+    }
+  }
 
   // if it is past want to add class .past to element, which will then style it. but how do I phrase that?
   //   if () {
