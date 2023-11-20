@@ -16,6 +16,10 @@ $(function () {
     var userInput = inputEl.val();
 
     console.log(userInput);
+
+    // for local storage, id name (hour-#) is the key, use .text?
+
+    // localStorage.setItem();
   })
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -29,7 +33,9 @@ $(function () {
   // .addClass("present");
   // .addClass("future"); 
 
-  var currentTime = dayjs("hh:mm:ss");
+  var currentTime = dayjs().hour();
+
+  console.log (currentTime);
   // var times = [
   //   "hour-9",
   //   "hour-10",
@@ -58,6 +64,6 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   var today = dayjs();
-  $("#currentDay").text(today.format("dddd D, YYYY"));
+  $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
 
 });
