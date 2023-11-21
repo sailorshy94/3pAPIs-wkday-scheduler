@@ -6,14 +6,11 @@ $(function () {
     event.preventDefault(); //event default - any click then stops 
 
     var clickTarget = $(this);
-
     var timeId = clickTarget.parent().attr("id");
-
-    var inputEl = clickTarget.prev();
-
     var userInput = clickTarget.siblings(".description").val();
+    console.log(userInput);
 
-    localStorage.setItem(timeId, userInput);
+    // localStorage.setItem(timeId, userInput);
   })
 
   var currentTime = dayjs().hour();
