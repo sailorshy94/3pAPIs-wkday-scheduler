@@ -11,13 +11,9 @@ $(function () {
 
     var inputEl = clickTarget.prev();
 
-    var userInput = inputEl.val();
+    var userInput = clickTarget.siblings(".description").val();
 
     localStorage.setItem(timeId, userInput);
-    
-    // if (userInput !== null){
-    //   var userData = JSON.parse(localStorage.getItem(userInput));
-    // }
   })
 
   var currentTime = dayjs().hour();
