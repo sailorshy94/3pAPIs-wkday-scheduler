@@ -1,10 +1,11 @@
 $(function () {
 
   var timeBlockContainer = $(".container-lg");
+  var timeBlocks = timeBlockContainer.children().attr("id");
 
   timeBlockContainer.on("click", ".saveBtn", function (event) {
     event.preventDefault(); //event default - any click then stops 
-
+    console.log(timeBlocks);
     var clickTarget = $(this);
     var timeId = clickTarget.parent().attr("id");
     var userInput = clickTarget.siblings(".description").val();
@@ -16,6 +17,8 @@ $(function () {
 
   for (var i = 9; i <= 17; i++) {
     var timeBlockEl = $("#hour-" + i);
+    var userInput = localStorage.getItem("hour-" + i);
+    timeBlockEl.find(".description").text(userInput);
     if (i < currentTime) {
       timeBlockEl.addClass("past");
     } else if (i > currentTime) {
@@ -24,6 +27,7 @@ $(function () {
       timeBlockEl.addClass("present");
     }
   }
+
 
   // function loadData() {
   //   for (var i = 9; i <= 17; i++) {
@@ -44,8 +48,9 @@ $(function () {
 
   var today = dayjs();
   $("#currentDay").text(today.format("dddd, MMMM D, YYYY"));
-  
+
   // $(document).ready(function () {
   //   loadData();
   // })
+
 });
