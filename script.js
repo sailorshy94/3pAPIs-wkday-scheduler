@@ -15,6 +15,7 @@ $(function () {
 
   var currentTime = dayjs().hour();
 
+  // this for loop is checking current time against time on timeBlock elements and assigning a class with colors based on whether the time is past, present or future, it is also assigning text from local storage to the textarea of each timeBlockEl if any exists
   for (var i = 9; i <= 17; i++) {
     var timeBlockEl = $("#hour-" + i);
     var userInput = localStorage.getItem("hour-" + i);
